@@ -42,7 +42,7 @@ using std::vector;
 #define ERR_NOTONCHANNEL(channel) ("442 *  " + channel + " :You're not on that channel\r\n")
 #define ERR_CHANOPRIVSNEEDED(channel) ("482 *  " + channel " :You're not channel operator\n")
 #define	ERR_USER_NOT_IN_CHANNEL send(fd, "441 ERR_USERNOTINCHANNEL \r\n", 28, 0)
-#define NEW_USER(nickname, username) ("Dear "+ nickname + "!" + username +"!" + " 001 RPL_WELCOME * Welcome to the IRC!\r\n")
+#define NEW_USER(nickname, username) ("001 * Welcome to the Internet Relay Network " + nickname + "!" + username + "\r\n")
 #define GET_USER_PASSED server.getUser(i).getUserPassed()
 #define GET_NICK_PASSED server.getUser(i).getNickNamePassed()
 #define SEND_ABOUT_NEW_USER std::cout << "New User has connected! Nickname: " << "is " << server.getUser(i).getNickname() << "!" << " Username: "<< "is " << server.getUser(i).getUsername() << "!" << " fd number " << "= " << server.getUser(i).getFd() << "!" << std::endl;
